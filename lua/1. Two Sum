@@ -1,0 +1,18 @@
+local TwoSums = function(Array, TargetNumber)
+  local CheckedNumbers = {}
+  
+  for i = 1, #Array do
+    local Current = Array[i]
+    local SomeMath = TargetNumber - Current
+    
+    if CheckedNumbers[SomeMath] then
+      return {CheckedNumbers[SomeMath], i}
+    end
+    
+    CheckedNumbers[Current] = i
+  end
+  
+  return nil
+end
+
+print(TwoSums({3, 3, 2, 9}, 6))
