@@ -1,0 +1,20 @@
+local ReverseArray = function(Array) --What IDIOT didn't add a function to reverse a table.
+    local NewArray = {}
+    for i = #Array, 1, -1 do
+        table.insert(NewArray, Array[i])
+    end
+    return NewArray
+end
+
+local AddTwoNumbers = function(Array1, Array2)
+    local Numbers1 = table.concat(ReverseArray(Array1))
+    local Numbers2 = table.concat(ReverseArray(Array2))
+    local FinalNumber = tostring(Numbers1 + Numbers2)
+    local FinalFinalNumberxD = {}
+    for i = 1, #FinalNumber do
+        table.insert(FinalFinalNumberxD, tonumber(string.sub(FinalNumber, i, i)))
+    end
+    return ReverseArray(FinalFinalNumberxD)
+end
+
+print(AddTwoNumbers({1, 2, 3}, {1, 2, 3}))
