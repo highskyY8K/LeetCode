@@ -1,0 +1,12 @@
+local input = "abcabc" -- it should return index 4
+local CharacterList = {}
+
+for i = 1, #input do
+    local Letter = string.sub(input, i, i)
+    if CharacterList[Letter] then
+        print(i) -- Prints 4
+        break
+    else
+        CharacterList[Letter] = true
+    end
+end
